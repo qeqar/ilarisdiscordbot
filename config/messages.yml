@@ -23,9 +23,13 @@ r_help: |
 r_desc: "Dice string to parse."
 r_result: |
   ```md
-  # {author} --- {identifier} {result}
+  # {author} -- {identifier} {result}
   Details: {details}
   ```
+r_title: "Result"
+r_success: "Success"
+r_fail: "Fail"
+r_difficulty: "difficulty"
 
 group_prefix: "Your group (without username)"
 group_name: "Name of your group."
