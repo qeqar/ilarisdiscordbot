@@ -102,6 +102,7 @@ gsetdescription_value: "Neue Beschreibung"
 gremove_help: "Entfernt einen Spieler aus deiner Gruppe"
 gremove_player: "Zu entfernender Spieler."
 gremove_info: "Verabschiedet <@{player}>."
+gremove_no_player_but_owner: "Only players can leave the group. As Owner you can delete the group for everyone with !gdestroy."
 
 gjoin_help: "Tritt einer Gruppe als Spieler bei"
 gjoin_group: "Gruppe, der du beitreten möchtest."

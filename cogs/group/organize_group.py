@@ -298,7 +298,9 @@ class Group:
         player_id = get_id(player)
         if check_owner and not self.is_owner(self.user):
             return False, msg["not_owner"]
-        if not player_id in self.players:
+        if not player_id in self.players and self.is_owner(self.user):
+            return False, msg["gremove_no_player_but_owner"]
+        elif not player_id in self.players:
             return False, msg["gremove_no_player"]
         self.players.remove(player_id)
         answer = msg["gremove_answer"].format(player=player_id)
