@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""
-I would like to turn this completly into a Group (and maybe GroupManager) class.
-Most of the methods can probably turned into methods very simpple and makes it a lot
-easier to use and maintain. Views and Modals could also be generated from a group class
-instead of having their own classes. Read more: #75
-"""
 import signal
 import sys
 import os
