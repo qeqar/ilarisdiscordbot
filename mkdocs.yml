@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: Ilaris Discord Bot
+nav:
+  - Home: index.md
+  - Entwickeln: entwickeln.md
+  - Tools: utils.md
