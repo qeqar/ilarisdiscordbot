@@ -10,6 +10,7 @@ import argparse
 import logging
 from shutil import copyfile
 import toml
+from git import Repo
 
 
 # frequently used directories
@@ -19,6 +20,14 @@ DATA = ROOT / "data"
 CONFIG = ROOT / "config"
 # other 'global' constants
 VERSION = toml.load(ROOT / "pyproject.toml")["project"]["version"]
+try:
+    COMMIT = Repo('.').head.commit.hexsha
+    BRANCH = Repo('.').active_branch.name
+except Exception as e:
+    print(e)
+    COMMIT = "None"
+    BRANCH = "None"
+
 
 # parse args and load config
 parser = argparse.ArgumentParser(description="Run the Ilaris Discord Bot")
