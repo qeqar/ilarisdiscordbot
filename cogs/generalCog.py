@@ -4,7 +4,7 @@ import os
 import discord
 from discord.ext import commands
 
-from config import RESOURCES
+from config import RESOURCES, VERSION
 from config import messages as msg
 from cogs.general import differ
 from cogs.general import ilaris_database
@@ -34,6 +34,10 @@ class GeneralCommands(commands.Cog):
     @commands.command(help=msg["helloilaris_help"])
     async def helloilaris(self, ctx):
         await ctx.reply(msg["helloilaris_reply"].format(author=ctx.author.id))
+    
+    @commands.command(help=msg["version_help"], aliases=["v"])
+    async def version(self, ctx):
+        await ctx.reply(f"v{VERSION}")
 
     @commands.command(help=msg["creatures_help"], aliases=["kreatur", "kreaturen", "creature"])
     async def creatures(self, ctx, creature: str = commands.parameter(default=None, description=msg["creatures_desc"])):

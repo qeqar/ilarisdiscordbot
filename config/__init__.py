@@ -9,6 +9,7 @@ from pathlib import Path
 import argparse
 import logging
 from shutil import copyfile
+import toml
 
 
 # frequently used directories
@@ -17,6 +18,7 @@ RESOURCES = ROOT / "resources"
 DATA = ROOT / "data"
 CONFIG = ROOT / "config"
 # other 'global' constants
+VERSION = toml.load(ROOT / "pyproject.toml")["project"]["version"]
 
 # parse args and load config
 parser = argparse.ArgumentParser(description="Run the Ilaris Discord Bot")
