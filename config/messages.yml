@@ -1,6 +1,8 @@
 # commands:
-helloilaris_help: "Greets the Ilaris Bot."
+helloilaris_help: "Greets the Ilaris bot."
 helloilaris_reply: "Hey, <@{author}>!"
+
+version_help: "Shows the version number for the running Ilaris bot."
 
 creatures_help: "Gets link to KreaturenDB"
 creatures_desc: "Name of creature"

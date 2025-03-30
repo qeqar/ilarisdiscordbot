@@ -1,0 +1,10 @@
+[project]
+name = "ilarisdiscordbot"
+version = "0.2.0"
+description = "Ein Discordbot für Ilaris"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gitpython>=3.1.44",
+    "toml>=0.10.2",
+]
