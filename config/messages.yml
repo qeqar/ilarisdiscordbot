@@ -24,6 +24,8 @@ r_help: |
   III: 2@3d20, III': 2@4d20, III'' 2@5d20
   Hit zones (optional rule Trefferzonen, p. 33):
   !tp 2d6+3: Rolls damage and 1d6 for the hit zone, see !help tp.
+  🎯 button below every roll: Rolls 1d6 for the hit zone and adds it to the result.
+  Only the person who rolled can press it, once per roll, within 10 minutes.
 r_desc: "Dice string to parse."
 r_result: |
   ```md
@@ -48,6 +50,7 @@ tp_title: "Damage"
 hit_zone_title: "Hit zone"
 hit_zone_die: "d6"
 hit_zone_pain: "Wound pain"
+hit_zone_button: "Roll hit zone"
 hit_zones:
   1: {name: "Legs", check: "GE", effect: "Fall – the target falls and lies on the ground."}
   2: {name: "Shield arm", check: "KK", effect: "Disarmed – the weapon in this hand falls to the ground."}

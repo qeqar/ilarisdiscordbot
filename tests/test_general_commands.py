@@ -5,6 +5,8 @@ import pytest
 import pytest_asyncio
 import discord.ext.test as dpytest
 import config
+from unittest.mock import AsyncMock, MagicMock
+from views.hit_zone import HitZoneView
 # from messages import msg
 
 
@@ -35,3 +37,17 @@ async def test_tp(bot):
     assert embed.title.endswith(" TP")
     zone_names = [zone["name"] for zone in config.messages["hit_zones"].values()]
     assert any(name in embed.fields[0].value for name in zone_names)
+
+
+@pytest.mark.asyncio
+async def test_hit_zone_button(bot):
+    embed = discord.Embed(title="🎲 Ergebnis 11")
+    view = HitZoneView(user=None, embed=embed)
+    interaction = MagicMock()
+    interaction.response.edit_message = AsyncMock()
+    await view.roll_hit_zone.callback(interaction)
+    zone_names = [zone["name"] for zone in config.messages["hit_zones"].values()]
+    assert any(name in embed.fields[0].value for name in zone_names)
+    assert view.roll_hit_zone.disabled
+    assert view.is_finished()
+    interaction.response.edit_message.assert_awaited_once_with(embed=embed, view=view)

@@ -10,6 +10,7 @@ from cogs.general import differ
 from cogs.general import ilaris_database
 from cogs.general import parse_die
 from cogs.general import hit_zone
+from views.hit_zone import HitZoneView
 
 cards = [os.path.splitext(filename)[0] for filename in os.listdir(RESOURCES/"manoeverkarten")]
 NAMED_ROLLS = [  # TODO: should this be part of settings?
@@ -137,7 +138,9 @@ class GeneralCommands(commands.Cog):
             content += f" ({msg['r_difficulty']}: {difficulty})"
         embed = discord.Embed(title=title, description=content, color=color)
         embed.set_thumbnail(url=dice_thumbnail(img))
-        response = await ctx.send(f"<@{ctx.author.id}>: {ctx.message.content}", embed=embed)
+        view = HitZoneView(ctx.author, embed)
+        response = await ctx.send(f"<@{ctx.author.id}>: {ctx.message.content}", embed=embed, view=view)
+        view.message = response
         # await response.delete(delay=300)
         await response.add_reaction("❌")
 

@@ -25,6 +25,8 @@ r_help: |
   III: 2@3d20, III': 2@4d20, III'' 2@5d20
   Trefferzonen (Optionalregel, S. 33):
   !tp 2w6+3: Würfelt Schaden und 1W6 für die Trefferzone, siehe !help tp.
+  🎯 Button unter jedem Wurf: Würfelt 1W6 für die Trefferzone und ergänzt das Ergebnis.
+  Nur wer gewürfelt hat kann ihn drücken, einmal pro Wurf, innerhalb von 10 Minuten.
 r_desc: "Zeichenkette zum Parsen der Würfel."
 r_result: |
   ```md
@@ -49,6 +51,7 @@ tp_title: "Schaden"
 hit_zone_title: "Trefferzone"
 hit_zone_die: "W6"
 hit_zone_pain: "Wundschmerz"
+hit_zone_button: "Trefferzone würfeln"
 hit_zones:
   1: {name: "Beine", check: "GE", effect: "Sturz – das Opfer stürzt und liegt am Boden."}
   2: {name: "Schildarm", check: "KK", effect: "Entwaffnet – die Waffe dieser Hand fällt zu Boden."}
