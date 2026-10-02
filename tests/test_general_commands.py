@@ -4,6 +4,7 @@ from discord.ext.commands import Cog, command
 import pytest
 import pytest_asyncio
 import discord.ext.test as dpytest
+import config
 # from messages import msg
 
 
@@ -24,3 +25,13 @@ async def test_r(bot):
     await dpytest.message("!r")
     embed = dpytest.get_message().embeds[0]
     assert embed.title.startswith("🎲")
+
+
+@pytest.mark.asyncio
+async def test_tp(bot):
+    await dpytest.message("!tp 2w6+3 Säbel")
+    embed = dpytest.get_message().embeds[0]
+    assert embed.title.startswith("⚔️ Säbel")
+    assert embed.title.endswith(" TP")
+    zone_names = [zone["name"] for zone in config.messages["hit_zones"].values()]
+    assert any(name in embed.fields[0].value for name in zone_names)
