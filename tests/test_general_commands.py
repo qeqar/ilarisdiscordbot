@@ -22,4 +22,5 @@ async def test_creatures(bot):
 @pytest.mark.asyncio
 async def test_r(bot):
     await dpytest.message("!r")
-    assert dpytest.verify().message().contains().content("Details:")
+    embed = dpytest.get_message().embeds[0]
+    assert embed.title.startswith("🎲")
