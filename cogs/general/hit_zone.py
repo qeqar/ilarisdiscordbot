@@ -19,7 +19,7 @@ def add_hit_zone_fields(embed, d6, zone):
     """Adds the hit zone and its wound pain check to a roll embed."""
     embed.add_field(
         name=f"🎯 {msg['hit_zone_title']}",
-        value=f"**{zone['name']}** ({msg['hit_zone_die']}: {d6})",
+        value=f"{zone['emoji']} **{zone['name']}** ({msg['hit_zone_die']}: {d6})",
         inline=True,
     )
     embed.add_field(

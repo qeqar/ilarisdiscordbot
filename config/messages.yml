@@ -52,12 +52,12 @@ hit_zone_die: "d6"
 hit_zone_pain: "Wound pain"
 hit_zone_button: "Roll hit zone"
 hit_zones:
-  1: {name: "Legs", check: "GE", effect: "Fall – the target falls and lies on the ground."}
-  2: {name: "Shield arm", check: "KK", effect: "Disarmed – the weapon in this hand falls to the ground."}
-  3: {name: "Sword arm", check: "KK", effect: "Disarmed – the weapon in this hand falls to the ground."}
-  4: {name: "Belly", check: "KO", effect: "Organ hit – the target suffers an additional wound."}
-  5: {name: "Chest", check: "KO", effect: "Organ hit – the target suffers an additional wound."}
-  6: {name: "Head", check: "MU", effect: "Stunned – like wound pain in the basic rules (p. 31)."}
+  1: {emoji: "🦵", name: "Legs", check: "GE", effect: "Fall – the target falls and lies on the ground."}
+  2: {emoji: "🛡️", name: "Shield arm", check: "KK", effect: "Disarmed – the weapon in this hand falls to the ground."}
+  3: {emoji: "🗡️", name: "Sword arm", check: "KK", effect: "Disarmed – the weapon in this hand falls to the ground."}
+  4: {emoji: "🫘", name: "Belly", check: "KO", effect: "Organ hit – the target suffers an additional wound."}
+  5: {emoji: "🫁", name: "Chest", check: "KO", effect: "Organ hit – the target suffers an additional wound."}
+  6: {emoji: "🧠", name: "Head", check: "MU", effect: "Stunned – like wound pain in the basic rules (p. 31)."}
 
 group_prefix: "Your group (without username)"
 group_name: "Name of your group."

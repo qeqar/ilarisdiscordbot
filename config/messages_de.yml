@@ -53,12 +53,12 @@ hit_zone_die: "W6"
 hit_zone_pain: "Wundschmerz"
 hit_zone_button: "Trefferzone würfeln"
 hit_zones:
-  1: {name: "Beine", check: "GE", effect: "Sturz – das Opfer stürzt und liegt am Boden."}
-  2: {name: "Schildarm", check: "KK", effect: "Entwaffnet – die Waffe dieser Hand fällt zu Boden."}
-  3: {name: "Schwertarm", check: "KK", effect: "Entwaffnet – die Waffe dieser Hand fällt zu Boden."}
-  4: {name: "Bauch", check: "KO", effect: "Organtreffer – das Opfer erleidet eine Zusatzwunde."}
-  5: {name: "Brust", check: "KO", effect: "Organtreffer – das Opfer erleidet eine Zusatzwunde."}
-  6: {name: "Kopf", check: "MU", effect: "Betäubt – wie Wundschmerz in den Basisregeln (S. 31)."}
+  1: {emoji: "🦵", name: "Beine", check: "GE", effect: "Sturz – das Opfer stürzt und liegt am Boden."}
+  2: {emoji: "🛡️", name: "Schildarm", check: "KK", effect: "Entwaffnet – die Waffe dieser Hand fällt zu Boden."}
+  3: {emoji: "🗡️", name: "Schwertarm", check: "KK", effect: "Entwaffnet – die Waffe dieser Hand fällt zu Boden."}
+  4: {emoji: "🫘", name: "Bauch", check: "KO", effect: "Organtreffer – das Opfer erleidet eine Zusatzwunde."}
+  5: {emoji: "🫁", name: "Brust", check: "KO", effect: "Organtreffer – das Opfer erleidet eine Zusatzwunde."}
+  6: {emoji: "🧠", name: "Kopf", check: "MU", effect: "Betäubt – wie Wundschmerz in den Basisregeln (S. 31)."}
 
 group_prefix: "Deine Gruppe (ohne Benutzername)"
 
