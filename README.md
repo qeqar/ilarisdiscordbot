@@ -14,7 +14,7 @@ to see it in action. You can also [host the bot yourself](#how-to-host).
                        "+": "2@4d20", "++": "2@5d20"}
   - `!tp`            Rolls damage plus 1d6 for the hit zone (optional rule Trefferzonen, p. 33).
                      Aliases: `!schaden`, `!dmg`
-  - 🎯 button       Every `!r` result has a "roll hit zone" button that adds the hit zone
+  - 🎯 button       Plain `!r` dice rolls (e.g. `2d6+3`, not `I`, `III` or `@`) get a "roll hit zone" button that adds the hit zone
                      (1d6) to the result. Only the roller can use it, once, within 10 minutes.
 ### GroupCommands
   - `!gcreate`       Creates a new group with yourself as the GM

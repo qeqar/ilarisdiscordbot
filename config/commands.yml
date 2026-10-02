@@ -24,7 +24,7 @@ hilfe:
       tp: Würfelt Schaden und zusätzlich 1W6 für die Trefferzone (Optionalregel, S. 33). Bspw. !tp 2w6+3 Säbel
         Zeigt Zone und Wundschmerz-Probe: 1 Beine (GE, Sturz), 2 Schildarm (KK, Entwaffnet), 3 Schwertarm (KK, Entwaffnet),
         4 Bauch (KO, Organtreffer), 5 Brust (KO, Organtreffer), 6 Kopf (MU, Betäubt). Aliase: schaden, dmg
-      r + 🎯: Unter jedem r-Wurf gibt es den Button 'Trefferzone würfeln'. Er würfelt 1W6 und ergänzt Trefferzone und
+      r + 🎯: Unter normalen r-Würfen (z.B. 2w6+3, nicht bei I, III oder @) gibt es den Button 'Trefferzone würfeln'. Er würfelt 1W6 und ergänzt Trefferzone und
         Wundschmerz im Ergebnis. Nur wer gewürfelt hat kann ihn drücken, einmal pro Wurf, innerhalb von 10 Minuten.
       what: Nur für Admins: Ruft Debug-Informationen ab
     Gruppen Befehle:

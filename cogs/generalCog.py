@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import re
 
 import discord
 from discord.ext import commands
@@ -26,6 +27,14 @@ def roll_dice(roll):
     for key, value in NAMED_ROLLS:
         roll = roll.replace(key, value)
     return parse_die.parse_roll(roll)
+
+
+def is_plain_dice_roll(roll):
+    """True for plain dice like 2w6+3, False for named rolls (I, III, ...) and @ rolls."""
+    roll = roll.replace(" ", "")
+    if "@" in roll or any(key in roll for key, _ in NAMED_ROLLS):
+        return False
+    return re.search(r"\d*[dw]\d+", roll, re.IGNORECASE) is not None
 
 
 def dice_thumbnail(img):
@@ -138,9 +147,11 @@ class GeneralCommands(commands.Cog):
             content += f" ({msg['r_difficulty']}: {difficulty})"
         embed = discord.Embed(title=title, description=content, color=color)
         embed.set_thumbnail(url=dice_thumbnail(img))
-        view = HitZoneView(ctx.author, embed)
+        # hit zones only make sense for damage, so no button for checks (I, III, @)
+        view = HitZoneView(ctx.author, embed) if is_plain_dice_roll(roll) else None
         response = await ctx.send(f"<@{ctx.author.id}>: {ctx.message.content}", embed=embed, view=view)
-        view.message = response
+        if view:
+            view.message = response
         # await response.delete(delay=300)
         await response.add_reaction("❌")
 

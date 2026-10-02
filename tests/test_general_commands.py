@@ -7,6 +7,7 @@ import discord.ext.test as dpytest
 import config
 from unittest.mock import AsyncMock, MagicMock
 from views.hit_zone import HitZoneView
+from cogs.generalCog import is_plain_dice_roll
 # from messages import msg
 
 
@@ -51,3 +52,13 @@ async def test_hit_zone_button(bot):
     assert view.roll_hit_zone.disabled
     assert view.is_finished()
     interaction.response.edit_message.assert_awaited_once_with(embed=embed, view=view)
+
+
+@pytest.mark.parametrize("roll", ["2w6+3", "2d6", "1W20+4", "3d6-1", "1d20"])
+def test_plain_dice_roll(roll):
+    assert is_plain_dice_roll(roll)
+
+
+@pytest.mark.parametrize("roll", ["I", "III", "IIIo", "Ioo+3", "2@3d20", "1@2w20+5", "5", ""])
+def test_special_roll(roll):
+    assert not is_plain_dice_roll(roll)
